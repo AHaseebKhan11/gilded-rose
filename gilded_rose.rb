@@ -8,12 +8,10 @@ class GildedRose
   end
 
   def init_items
-    items.each do |item|
-      item_collection.push(MainItem.build_items(item))
-    end
+    items.each { |item| item_collection.push(MainItem.build_items(item)) }
   end
 
-  def update_quality()
+  def update_quality
     item_collection.each {|instance| instance.update }
   end
 end

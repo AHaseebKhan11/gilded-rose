@@ -66,7 +66,7 @@ describe GildedRose do
 
     describe 'Conjured items delay twice as fast' do
       it 'Sell in date has not passed' do
-        item = Item.new('Conjured', sell_in=2, quality=10)
+        item = Item.new('Conjured Mana Cake', sell_in=2, quality=10)
         items = [item]
         gilded_rose = described_class.new(items)
         gilded_rose.update_quality
@@ -75,7 +75,7 @@ describe GildedRose do
       end
 
       it 'Sell in date has passed and quality is not less than zero' do
-        item = Item.new('Conjured', sell_in=-1, quality=3)
+        item = Item.new('Conjured Mana Cake', sell_in=-1, quality=3)
         items = [item]
         gilded_rose = described_class.new(items)
         gilded_rose.update_quality
